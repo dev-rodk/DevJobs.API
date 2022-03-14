@@ -2,16 +2,17 @@ namespace DevJobs.API.Entities
 {
     public class JobVacancy
     {
-        public JobVacancy(string company, string description, string title, bool isRemote, string salaryRange, DateTime createdAt)
+        public JobVacancy(string description, string title, string company, bool isRemote, string salaryRange, DateTime createdAt, List<JobApplication> applications)
         {
-            this.Company = company;
-            this.Description = description;
-            this.Title = title;
-            this.IsRemote = isRemote;
-            this.SalaryRange = salaryRange;
-            this.CreatedAt = DateTime.UtcNow;
-            this.Applications = new List<JobApplication>(); 
+            Description = description;
+            Title = title;
+            Company = company;
+            IsRemote = isRemote;
+            SalaryRange = salaryRange;
+            CreatedAt = DateTime.Now;
+            Applications = new List<JobApplication>();
         }
+
         public int Id { get; private set; }
         public string Description { get; private set; }
         public string Title { get; private set; }
@@ -25,6 +26,8 @@ namespace DevJobs.API.Entities
     public void Update (string title, string description) {
       Title = title;
       Description = description; 
+
+
     }
     }
 }

@@ -20,10 +20,18 @@ namespace DevJobs.API.Controllers
             return Ok();}
 
 // 
-        [HttpPost]
+        [HttpPost("{id}")]
         public IActionResult GetAllById()
         {
             
+            return Ok();
+        }
+
+
+        [HttpPut]
+
+        public IActionResult putVacancies() {
+
             return Ok();
         }
 }
